@@ -4,32 +4,15 @@
 //Написать базовые программы
 //Базовый стиль
 
-
-class A{
-
-	public $value = 1;
-}
-
-$a = new A;
-$b = $a;
-
-$b->value++;
-
-echo $a->value;
-
-$c = new A;
-$d = &$c;
-
-$d->value++;
-
-echo $a->value."\n";
-
 /*
 require "src\PHP\autoloader.php";
 
-use scr\PHP\Controller\IndexController;
+use Controller\IndexController;
 
 $my_obj = new IndexController();  
+*/
+
+
 $request = $_SERVER['REQUEST_URI'];
 
 $routes = explode('/',$request);
@@ -71,8 +54,7 @@ if(file_exists($controller_path))
 }else
 {
 	echo "404 PAGE NOT FOUND";
-}*/
-
+}
 
 #var_dump($my_obj);
 

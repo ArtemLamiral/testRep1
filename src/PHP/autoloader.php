@@ -6,14 +6,17 @@ class Autoloader{
 	{
 		spl_autoload_register(function($class){
 
-			$file = str_replace('\\',DIRECTORY_SEPARATOR, $class).'.php';
-
-			echo $class."   ".$file;
+			$file = __DIR__."\\".$class.'.php';
 
 			if(file_exists($file))
-			{
-				require $file;
+			{	
+				require_once $file;
+
+				$my_obj = new Controller\IndexController();
+				echo $my_obj->index();
+
 				return true;
+			}else{
 			}
 			return false;
 		});

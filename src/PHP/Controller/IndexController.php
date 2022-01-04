@@ -1,6 +1,6 @@
 <?php
 
-namespace scr\PHP\Controller;
+namespace Controller;
 
 class IndexController{
 	
@@ -16,5 +16,3 @@ class IndexController{
 		return $index_html;
 	}
 }
-
-

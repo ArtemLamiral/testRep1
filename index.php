@@ -15,6 +15,8 @@ $my_obj = new IndexController();
 
 $request = $_SERVER['REQUEST_URI'];
 
+echo $request;
+
 $routes = explode('/',$request);
 $routes = array_slice($routes, 1);
 

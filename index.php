@@ -1,4 +1,5 @@
 <?php
+use App\Controllers as Controllers;
 
 //Настроить маршрутизацию на сайте
 //Написать базовые программы
@@ -14,8 +15,6 @@ $my_obj = new IndexController();
 
 
 $request = $_SERVER['REQUEST_URI'];
-
-echo $request;
 
 $routes = explode('/',$request);
 $routes = array_slice($routes, 1);
@@ -33,12 +32,19 @@ if(count($routes) == 1)
 	{
 
 	}
-	exit;
 }
 
 $controller_name = strtolower($routes[0]);
 $controller_name = ucfirst($controller_name);
- 
+
+$controller_name = "Controllers\\".$controller_name."Controller";
+
+require_once "src\PHP\autoloader.php";
+Autoloader::register();
+
+$controller = new $controller_name();
+
+/*
 $action_name = strtolower($routes[1]);
 
 $controller_path = "src/PHP/Controller/".$controller_name.".php";
@@ -61,3 +67,4 @@ if(file_exists($controller_path))
 #var_dump($my_obj);
 
  
+*/

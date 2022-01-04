@@ -1,5 +1,8 @@
 <?php
 
+
+//Реализовать с помощью исключений
+
 class Autoloader{
 
 	public static function register()
@@ -8,12 +11,11 @@ class Autoloader{
 
 			$file = __DIR__."\\".$class.'.php';
 
+			echo $file;
+
 			if(file_exists($file))
 			{	
 				require_once $file;
-
-				$my_obj = new Controller\IndexController();
-				echo $my_obj->index();
 
 				return true;
 			}else{
@@ -23,4 +25,3 @@ class Autoloader{
 	}
 }
 
-Autoloader::register();

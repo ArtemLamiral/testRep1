@@ -1,9 +1,25 @@
 <?php
-use App\Controllers as Controllers;
 
-//Настроить маршрутизацию на сайте
-//Написать базовые программы
-//Базовый стиль
+class Pasha{
+	private bool $soset_chlen = true;
+
+	public $val;
+
+	public function __construct(){
+		$this->val = 2;
+	}
+
+	public function print(): void
+	{
+		echo $this->val;
+	}
+}
+
+
+$myObj = new Pasha();
+
+echo json_encode($myObj);
+
 
 /*
 require "src\PHP\autoloader.php";
@@ -11,7 +27,8 @@ require "src\PHP\autoloader.php";
 use Controller\IndexController;
 
 $my_obj = new IndexController();  
-*/
+*//*
+use App\Controllers as Controllers;
 
 
 $request = $_SERVER['REQUEST_URI'];
@@ -41,6 +58,8 @@ $controller_name = "Controllers\\".$controller_name."Controller";
 
 require_once "src\PHP\autoloader.php";
 Autoloader::register();
+
+echo $controller_name;
 
 $controller = new $controller_name();
 
